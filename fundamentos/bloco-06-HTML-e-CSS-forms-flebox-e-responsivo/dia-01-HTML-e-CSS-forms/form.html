@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>Formulário de currículo</header>
+    <form action="" method="get">
+        <fieldset>
+            <div>
+                <label for="nome-completo">Nome completo:</label>
+                <input type="text" name="name" id="full-name" maxlength="40" required>
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input type="email" name="email" id="email" maxlength="50" required>
+            </div>
+             <div>
+                <label for="cpf">cpf:</label>
+                <input type="text" name="cpf" id="cpf" max="11" required>
+             </div>
+             <div>
+                <label for="address">Endereço:</label>
+                <input type="text" name="address" id="address" maxlength="200" required>
+             </div> 
+             <div>
+                 <label for="cidade">Cidade:</label>
+                 <input type="text" name="city" id="city" maxlength="28" required>
+             </div>
+             <div>
+                 <label for="state">Estado:</label>
+                    <select name="state" id="state" required></select>
+             </div>
+             <div>
+                 <label for="house">Tipo:</label>
+                 <input type="radio" name="type" id="house" value="house" required>Casa
+                 <input type="radio" name="type" id="apartment" value="apartment" required>Apartamento
+             </div>
+        </fieldset>
+        <Fieldset>
+            <div>
+                <label for="">Resumo do currículo</label>
+                <textarea name="resume" id="resume"  maxlength="1000" cols="100" rows="20" required></textarea>
+            </div>
+            <div>
+                <label for="">Função:</label>
+                <input type="text" name="job-role" id="job-Role" maxlength="40"  required>
+            </div>
+            <div>
+                <label for="description">Descrição da função:</label>
+                <input type="text" id="description" name="description" maxlength="500" required>
+            </div>
+            <div>
+                <label for="date">Data do início:</label>
+                <input id="date" type="date">
+            </div>
+        </Fieldset>
+        <div>
+            <button type="submit" class="submit">Enviar</button>
+            <button class="clear">Apagar</button>
+        </div>
+    </form>
+    <script src="script.js"></script> 
+</body>
+</html>

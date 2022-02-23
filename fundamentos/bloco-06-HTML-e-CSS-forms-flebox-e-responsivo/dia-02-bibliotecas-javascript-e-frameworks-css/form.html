@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="display-6 text-center">Formulário de currículo</h1>
+    <form class="container js-form" action="" method="get">
+        <fieldset>
+            <div class="mb-3">
+                <label for="nome-completo" class="form-label">Nome completo:</label>
+                <input data-validate-field="name" class="form-control" type="text" name="name" id="full-name" maxlength="40" required>
+            </div>
+            <div class="mb-3">
+                <label  class="form-label" for="email">E-mail:</label>
+                <input data-validate-field="email" class="form-control"  type="email" name="email" id="email" maxlength="50" required>
+            </div>
+             <div class="mb-3">
+                <label class="form-label" for="cpf">cpf:</label>
+                <input data-validate-field="cpf" class="form-control" type="text" name="cpf" id="cpf" max="11" required>
+             </div>
+             <div class="mb-3">
+                <label for="address" class="form-label">Endereço:</label>
+                <input  data-validate-field="address"class="form-control" type="text" name="address" id="address" maxlength="200" required>
+             </div> 
+             <div class="mb-3">
+                 <label for="cidade" class="form-label">Cidade:</label>
+                 <input data-validate-field="city" class="form-control" type="text" name="city" id="city" maxlength="28" required>
+             </div>
+             <div class="mb-3">
+                 <label for="state" class="form-label">Estado:</label>
+                    <select data-validate-field="state" name="state" id="state" required></select>
+             </div>
+             <div class="mb-3">
+                 <div class="mb-3">
+                     Tipo de imóvel:
+                 </div>
+                <div class="form-check">
+                    <input  class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Casa
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                       Apartamento
+                    </label>
+                  </div>
+             </div>
+        </fieldset>
+        <Fieldset>
+            <div class="mb-3">
+                <label class="form-label" for="resume">Resumo do currículo:</label>
+                <textarea data-validate-field="resume" class="form-control" name="resume" id="resume"  maxlength="1000" cols="100" rows="20" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="job-Role" class="form-label">Função:</label>
+                <input data-validate-field="job-Role" class="form-control" type="text" name="job-role" id="job-Role" maxlength="40"  required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Descrição da função:</label>
+                <input class="form-control" type="text" id="description" name="description" maxlength="500" required>
+            </div>
+            <div class="mb-3">
+                <label for="date" class="form-label">Data do início:</label>
+                <input data-validate-field="date" class="form-control" id="date" type="date">
+            </div>
+        </Fieldset>
+        <div class="mb-3">
+            <button type="submit" class="submit btn btn-primary" >Enviar</button>
+            <button class="clear btn btn-warning">Apagar</button>
+        </div>
+    </form>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
