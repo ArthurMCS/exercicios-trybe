@@ -1,6 +1,6 @@
 const unidades = ['km', 'hm', 'dam', 'm', 'dm', 'cm', 'mm'];
 
-const error = (unidade: string): any => {
+export const error = (unidade: string): any => {
     console.error(`A ${unidade} não é uma unidade!`)
     return;
 };
