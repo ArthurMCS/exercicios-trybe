@@ -4,7 +4,7 @@ class Estudante {
     private _notasProvas: number[];
     private _notasTrabalhos: number[];
 
-    constructor(matricula: string, name: string, notasProvas: number, notasTrabalhos: number){
+    constructor(matricula: string, name: string, notasProvas?: number, notasTrabalhos?: number){
         this._matricula = matricula;
         this._name = name;
         this._notasProvas = [];
@@ -22,12 +22,33 @@ class Estudante {
     get notasProvas():number[] {
         return this._notasProvas;
     }
+    set notasProvas(value:number[]) {
+        if(value.length > 4){
+            console.error("Só deve haver 4 notas")
+            return;
+        }
+        this._notasProvas = value;
+    }
 
     get notasTrabalhos():number[] {
         return this._notasTrabalhos;
     }
 
+    set notasTrabalhos(value:number[]) {
+        if(value.length > 2){
+            console.error("Só deve haver 2 notas")
+            return;
+        }
+        this._notasTrabalhos = value;
+    }
+
     get name():string {
         return this._name;
     }
+
+    set name(value:string) { this._name = value; }
 }
+
+const NewEstudante = new Estudante('123456789', 'Jhon Doe');
+
+console.log(NewEstudante)
