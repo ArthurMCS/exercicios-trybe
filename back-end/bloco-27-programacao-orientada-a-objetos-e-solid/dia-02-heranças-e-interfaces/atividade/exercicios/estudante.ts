@@ -1,14 +1,12 @@
-class Estudante {
-    private _matricula: string;
-    private _name: string;
-    private _notasProvas: number[];
-    private _notasTrabalhos: number[];
+import Person from './pessoa';
+export default class Student extends Person {
+    private _matricula: string = ''
+    private _notasProvas: number[] = [];
+    private _notasTrabalhos: number[] = [];
 
-    constructor(matricula: string, name: string, notasProvas?: number[], notasTrabalhos?: number[]){
-        this._matricula = matricula;
-        this._name = name;
-        this._notasProvas = [];
-        this._notasTrabalhos = [];
+    constructor(name: string, birthDate: Date){
+        super(name, birthDate);
+        this._matricula = this.generateMatricula();
     }
 
     get matricula():string {
@@ -16,6 +14,7 @@ class Estudante {
     }
 
     set matricula(value:string) {
+        if(value.length < 16) throw new Error('matricula must be 16 characters')
         this._matricula = value;
     }
 
@@ -24,7 +23,7 @@ class Estudante {
     }
     set notasProvas(value:number[]) {
         if(value.length > 4){
-            throw new Error("Só deve haver 4 notas")
+            throw new Error("Só deve haver até 4 notas")
         }
         this._notasProvas = value;
     }
@@ -35,18 +34,16 @@ class Estudante {
 
     set notasTrabalhos(value:number[]) {
         if(value.length > 2){
-           throw new Error("Só deve haver 2 notas")
+           throw new Error("Só deve haver até 2 notas")
         }
         this._notasTrabalhos = value;
     }
 
-    get name():string {
-        return this._name;
+    //função do gabarito da trybe
+    generateMatricula(): string {
+        const randomStr = String(Date.now() * (Math.random() + 1)).replace(/\W/g, '');
+
+        return `STU${randomStr}`;
     }
 
-    set name(value:string) { this._name = value; }
 }
-
-const NewEstudante = new Estudante('123456789', 'Jhon Doe');
-
-console.log(NewEstudante)
